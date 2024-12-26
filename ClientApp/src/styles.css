@@ -1,0 +1,15 @@
+.tableStyle
+{
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #ccc;
+}
+.btnEdit{
+    background-color: rgb(250, 250, 162);
+}
+.btnDelete{
+    background-color: rgb(243, 115, 115);
+}
+.btnInsert{
+    background-color: rgb(136, 239, 136);
+}
