@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using rwa_project;
 
@@ -10,9 +11,10 @@ using rwa_project;
 namespace rwa_project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241228162901_Menu2")]
+    partial class Menu2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.30");
@@ -33,13 +35,16 @@ namespace rwa_project.Migrations
                     b.Property<int>("MenuId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("MenuId1")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MenuId");
+                    b.HasIndex("MenuId1");
 
                     b.ToTable("Calendars");
                 });
@@ -105,9 +110,8 @@ namespace rwa_project.Migrations
 
             modelBuilder.Entity("rwa_project.Model.Menu", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -164,13 +168,17 @@ namespace rwa_project.Migrations
                     b.Property<int>("MenuId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("MenuId1")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MenuId");
+                    b.HasIndex("MenuId1");
 
                     b.ToTable("Projects");
                 });
@@ -178,10 +186,8 @@ namespace rwa_project.Migrations
             modelBuilder.Entity("rwa_project.Model.Calendar", b =>
                 {
                     b.HasOne("rwa_project.Model.Menu", "Menu")
-                        .WithMany()
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Calendars")
+                        .HasForeignKey("MenuId1");
 
                     b.Navigation("Menu");
                 });
@@ -220,7 +226,7 @@ namespace rwa_project.Migrations
                 {
                     b.HasOne("rwa_project.Model.Menu", "Menu")
                         .WithMany("Projects")
-                        .HasForeignKey("MenuId")
+                        .HasForeignKey("MenuId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -236,6 +242,8 @@ namespace rwa_project.Migrations
 
             modelBuilder.Entity("rwa_project.Model.Menu", b =>
                 {
+                    b.Navigation("Calendars");
+
                     b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using rwa_project;
 
@@ -10,9 +11,10 @@ using rwa_project;
 namespace rwa_project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241228164120_Menu5")]
+    partial class Menu5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.30");
@@ -30,7 +32,10 @@ namespace rwa_project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MenuId")
+                    b.Property<string>("MenuId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MenuIdCalendar")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
@@ -105,9 +110,8 @@ namespace rwa_project.Migrations
 
             modelBuilder.Entity("rwa_project.Model.Menu", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -161,7 +165,10 @@ namespace rwa_project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MenuId")
+                    b.Property<string>("MenuId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MenuIdProject")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
@@ -179,9 +186,7 @@ namespace rwa_project.Migrations
                 {
                     b.HasOne("rwa_project.Model.Menu", "Menu")
                         .WithMany()
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MenuId");
 
                     b.Navigation("Menu");
                 });
@@ -219,10 +224,8 @@ namespace rwa_project.Migrations
             modelBuilder.Entity("rwa_project.Model.Project", b =>
                 {
                     b.HasOne("rwa_project.Model.Menu", "Menu")
-                        .WithMany("Projects")
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("MenuId");
 
                     b.Navigation("Menu");
                 });
@@ -232,11 +235,6 @@ namespace rwa_project.Migrations
                     b.Navigation("Emails");
 
                     b.Navigation("Phones");
-                });
-
-            modelBuilder.Entity("rwa_project.Model.Menu", b =>
-                {
-                    b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618
         }
