@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    font-family: Manrope;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 2.2rem 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 4.4rem;
+    font-weight: bold;
+  }
+  
+  .navLinks li {
+    display: inline;
+  }
+  
+  .navLinks a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .navLinks a:hover {
+    color: #E10324;
+  }
+
+  ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}

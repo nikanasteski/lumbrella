@@ -1,4 +1,4 @@
-.tableStyle
+/* .tableStyle
 {
     padding: 20px;
     margin: 20px;
@@ -12,4 +12,43 @@
 }
 .btnInsert{
     background-color: rgb(136, 239, 136);
+} */
+
+/* Manrope Font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Aguafina Script Font */
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
+body{
+    background-color: #0B0B0C !important;
+    height: 100vh;
+    overflow: hidden;
+    margin-left: 5.5rem;
+    margin-right: 5.5rem;
+}
+
+a{
+    font-family: 'Manrope', sans-serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+  
+h1, h2 {
+    font-family: 'Aguafina Script', cursive;
+}
+
+h2 {
+    color: #E10324;
+    font-size: 135px;
+}
+
+p{
+    color: #FFFFFF;
+    font-size: 26px;
+    line-height: 50px;
+    opacity: 0.8;
 }

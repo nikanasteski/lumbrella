@@ -16,7 +16,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-bootstrap": "^0.26.1",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.0.2",
     "rimraf": "^3.0.2",
@@ -54,7 +54,7 @@
     "nth-check": "^3.0.1"
   },
   "scripts": {
-    "prestart": "node aspnetcore-https && node aspnetcore-react",
+    "prestart": "",
     "start": "rimraf ./build && react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",

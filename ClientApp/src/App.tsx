@@ -1,35 +1,25 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Category from './components/Category';
-import Phone from './components/Phone';
-import Email from './components/Email';
-import Layout from './components/Layout';
+import Home from './pages/home';
+import Event from './pages/event';
+import About from './pages/about';
+import Contact from './pages/contact';
+import Login from './pages/login';
+import Projects from './pages/projects';
+import './styles.css';
 
 export default function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route 
-          index
-          element={<Home />}
-        />
-
-        <Route 
-          path='/category'
-          element={<Category />}
-        />
-
-        <Route 
-          path='/phone'
-          element={<Phone />}
-        />
-
-        <Route 
-          path='/email'
-          element={<Email />}
-        />
-      </Routes>
-    </Layout>
+    <div>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+    </div>
   ); 
 }
