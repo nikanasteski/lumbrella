@@ -7,10 +7,6 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<Category> Categories { get; set; }
-    public DbSet<Contact> Contacts { get; set; }
-    public DbSet<Email> Emails { get; set; }
-    public DbSet<Phone> Phones { get; set; }
     public DbSet<Calendar> Calendars { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Menu> Menus { get; set; }
@@ -19,9 +15,14 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Project>()
-            .HasOne(p => p.Menu)
-            .WithMany(m => m.Projects)
-            .HasForeignKey(p => p.MenuId);
+      /*  modelBuilder.Entity<Project>()
+        .HasOne(p => p.Menu)
+        .WithMany(m => m.Projects)
+        .HasForeignKey(p => p.MenuId);
+
+        modelBuilder.Entity<Calendar>()
+        .HasOne(c => c.Menu)
+        .WithMany(m => m.Calendars)
+        .HasForeignKey(c => c.MenuId);  */
     }
 }
