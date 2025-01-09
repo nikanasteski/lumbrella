@@ -13,7 +13,6 @@ export default function App() {
     <div>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/event" element={<Event />} />
           <Route path="/contact" element={<Contact />} />

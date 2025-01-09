@@ -1,0 +1,34 @@
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginHeading{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+input{
+    background-color: #0B0B0C;
+    border-radius: 20px;
+    border: 2px solid #E10324;
+    color: #FFFFFF;
+    font-size: 26px;
+    padding: 10px 20px;
+    margin: 15px;
+    width: 38rem;
+}
+
+.loginButton{
+    background-color: #E10324;
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 15px;
+    margin-top: 40px;
+    width: 38rem;
+}
