@@ -32,17 +32,6 @@ const EventCalendar: React.FC = () => {
           </div>
         ))}
       </div>
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
-      <Navbar />
     </div>
   );
 };
