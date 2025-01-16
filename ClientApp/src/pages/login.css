@@ -31,4 +31,17 @@ input{
     margin: 15px;
     margin-top: 40px;
     width: 38rem;
+    display: block;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    input, .loginButton {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .loginHeading{
+        font-size: 100px;
+    }
 }
