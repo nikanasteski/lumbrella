@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("https://localhost:7037/api/projects")
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
         <div key={project.id}>
           <h2>{project.name}</h2>
           <p>{project.description}</p>
-          <img src={project.imageUrl} alt={project.name} />
+          {/* <img src={project.imageUrl} alt={project.name} /> */}
         </div>
       ))}
     </div>

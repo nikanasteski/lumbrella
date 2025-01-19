@@ -13,7 +13,7 @@ const EventCalendar: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
-    fetch("/api/calendar")
+    fetch("https://localhost:7037/api/calendar")
       .then((response) => response.json())
       .then((data) => setEvents(data))
       .catch((error) => console.error("Error fetching events:", error));
