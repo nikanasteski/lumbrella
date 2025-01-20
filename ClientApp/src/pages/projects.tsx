@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
+import "./projects.css";
 
 interface Project {
   id: number;
-  name: string;
+  title: string;
   description: string;
   imageUrl: string;
 }
@@ -12,7 +13,7 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch("https://localhost:7037/api/projects")
+    fetch("https://localhost:7037/api/Project")
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
@@ -21,14 +22,20 @@ const Projects: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <h1>Our Projects</h1>
-      {projects.map((project) => (
-        <div key={project.id}>
-          <h2>{project.name}</h2>
-          <p>{project.description}</p>
-          {/* <img src={project.imageUrl} alt={project.name} /> */}
-        </div>
-      ))}
+      <div>
+        <h2>Our Projects</h2>
+        {projects.map((project) => (
+          <div key={project.id}>
+            <p>{project.title}</p>
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              //onError={(e) => (e.currentTarget.src = "fallback-image-url.jpg")}
+            />
+            <h1>{project.description}</h1>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
