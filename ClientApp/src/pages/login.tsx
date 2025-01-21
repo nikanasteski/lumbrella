@@ -25,25 +25,27 @@ const Login: React.FC = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      <div>
-        <label>Username:</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div className="loginContainer">
+        <h2 className="loginHeading">Login</h2>
+        <div>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button onClick={handleLogin} className="loginButton">Login</button>
+        {message && <p>{message}</p>}
       </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <button onClick={handleLogin}>Login</button>
-      {message && <p>{message}</p>}
     </div>
   );
 };
