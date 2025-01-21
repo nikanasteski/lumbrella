@@ -9,7 +9,6 @@ const Login: React.FC = () => {
   const handleLogin = async () => {
     try {
       const response = await fetch(
-        // `/api/Login?username=${username}&password=${password}`
         `https://localhost:7037/api/Login?username=${username}&password=${password}`
       );
       if (response.ok) {
