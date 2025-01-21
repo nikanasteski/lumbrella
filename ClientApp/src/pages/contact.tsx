@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
+import "./contact.css";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -30,34 +31,45 @@ const Contact: React.FC = () => {
   return (
     <div>
       <Navbar />
-
-      <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Send</button>
-      </form>
+      <div className="contactContainer">
+        <div className="contactForm">
+          <form onSubmit={handleSubmit}>
+            <input
+              className="contactInput"
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              className="contactInput"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit" className="contactButton">Send</button>
+          </form>
+        </div>
+        <div className="contactInfo">
+          <h2 className="contactHeading">Reach out here!</h2>
+          <p className="contactTitle">E-mail</p>
+          <p className="contactP">mail@mail.hr</p>
+          <p className="contactTitle">Instagram</p>
+          <p className="contactP">@igusername</p>
+        </div>
+      </div>
     </div>
   );
 };
