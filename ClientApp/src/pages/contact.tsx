@@ -47,48 +47,59 @@ const ContactForm: React.FC = () => {
   return (
     <>
       <Navbar />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+      <div className="contactContainer">
+        <div className="contactForm">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input className="contactInput"
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <input className="contactInput"
+                type="email"
+                name="from"
+                placeholder="Email"
+                value={formData.from}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <input className="contactInput"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <textarea
+                name="body"
+                placeholder="Message"
+                value={formData.body}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className="contactButton">Send Message</button>
+          </form>
         </div>
-        <div>
-          <label>Your Email:</label>
-          <input
-            type="email"
-            name="from"
-            value={formData.from}
-            onChange={handleChange}
-            required
-          />
+        <div className="contactInfo">
+          <h2>Reach out here!</h2>
+          <p className="contactTitle">E-mail</p>
+          <p className="contactP">mail@mail.com</p>
+          <p className="contactTitle">Instagram</p>
+          <p className="contactP">@igusername</p>
         </div>
-        <div>
-          <label>Subject:</label>
-          <input
-            type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Message:</label>
-          <textarea
-            name="body"
-            value={formData.body}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
+      </div>
     </>
   );
 };
