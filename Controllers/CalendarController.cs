@@ -20,6 +20,7 @@ namespace rwa_project.Controllers
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendars()
         {
             return await _context.Calendars
+                .OrderBy(x => x.Date)
                 .ToListAsync();
         }
 
