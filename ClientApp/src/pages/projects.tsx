@@ -36,6 +36,7 @@ const Projects: React.FC = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
+                  //loading="lazy"
                   //onError={(e) => (e.currentTarget.src = "fallback-image-url.jpg")}
                 />
               </div>
