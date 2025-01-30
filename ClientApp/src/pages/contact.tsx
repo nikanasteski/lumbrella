@@ -23,7 +23,6 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     try {
       const response = await fetch("https://localhost:7037/api/Email", {
-        // Update with your backend URL
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +32,7 @@ const ContactForm: React.FC = () => {
 
       if (response.ok) {
         alert("Email sent successfully!");
-        setFormData({ name: "", from: "", subject: "", body: "" }); // Clear the form
+        setFormData({ name: "", from: "", subject: "", body: "" });
       } else {
         const errorMessage = await response.text();
         alert(`Failed to send email: ${errorMessage}`);
@@ -51,7 +50,8 @@ const ContactForm: React.FC = () => {
         <div className="contactForm">
           <form onSubmit={handleSubmit}>
             <div>
-              <input className="contactInput"
+              <input
+                className="contactInput"
                 type="text"
                 name="name"
                 placeholder="Name"
@@ -61,7 +61,8 @@ const ContactForm: React.FC = () => {
               />
             </div>
             <div>
-              <input className="contactInput"
+              <input
+                className="contactInput"
                 type="email"
                 name="from"
                 placeholder="Email"
@@ -71,7 +72,8 @@ const ContactForm: React.FC = () => {
               />
             </div>
             <div>
-              <input className="contactInput"
+              <input
+                className="contactInput"
                 type="text"
                 name="subject"
                 placeholder="Subject"
@@ -89,7 +91,9 @@ const ContactForm: React.FC = () => {
                 required
               />
             </div>
-            <button type="submit" className="contactButton">Send Message</button>
+            <button type="submit" className="contactButton">
+              Send Message
+            </button>
           </form>
         </div>
         <div className="contactInfo">
