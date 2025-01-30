@@ -29,11 +29,11 @@ body{
     margin-right: 5.5rem;
 }
 
-a, button{
+a, button {
     font-family: 'Manrope', sans-serif;
 }
 
-p, input{
+p, input, strong{
     font-family: 'Poppins', sans-serif;
 }
   
@@ -52,3 +52,4 @@ p{
     line-height: 50px;
     opacity: 0.8;
 }
+

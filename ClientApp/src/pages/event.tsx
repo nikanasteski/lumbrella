@@ -23,12 +23,15 @@ const EventCalendar: React.FC = () => {
     <div>
       <Navbar />
       <div>
-        <h2>Upcoming Events</h2>
+        <h2 className="eventHeading">Upcoming Events</h2>
         {events.map((event) => (
-          <div key={event.id}>
-            <p>{new Date(event.date).toLocaleDateString()}</p>
-            <p>{event.title}</p>
-            <h1>{event.description}</h1>
+          <div key={event.id} className="event">
+            <hr className="divider"></hr>
+            <div className="eventInfo">
+              <strong>{event.title}</strong>
+              <p className="eventText">{new Date(event.date).toLocaleDateString()}</p>
+              <p className="eventText">{event.description}</p>
+            </div>
           </div>
         ))}
       </div>

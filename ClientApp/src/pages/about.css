@@ -38,3 +38,26 @@ p{
 .aboutHeading{
     margin-top: 10rem;
 }
+
+@media (max-width: 1500px) {
+    .aboutHeading {
+        font-size: 8rem;
+        margin-top: 8rem;
+    }
+
+    .aboutP {
+        font-size: 1.5rem;
+        margin-top: 1.4rem;
+    }
+}
+@media (max-width: 1280px) {
+    .aboutHeading {
+        font-size: 7rem;
+        margin-top: 7rem;
+    }
+
+    .aboutP {
+        font-size: 1.4rem;
+        margin-top: 1.4rem;
+    }
+}
