@@ -22,19 +22,7 @@ public class AppDbContext : DbContext
             l =>
             {
                 l.HasNoKey();
-                //eb.ToView("View_BlogPostCounts");
-                //eb.Property(v => v.BlogName).HasColumnName("Name");
             });
 
-
-        /*  modelBuilder.Entity<Project>()
-          .HasOne(p => p.Menu)
-          .WithMany(m => m.Projects)
-          .HasForeignKey(p => p.MenuId);
-
-          modelBuilder.Entity<Calendar>()
-          .HasOne(c => c.Menu)
-          .WithMany(m => m.Calendars)
-          .HasForeignKey(c => c.MenuId);  */
     }
 }
